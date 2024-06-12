@@ -24,4 +24,14 @@ I have developed a basic OS.
 There are two versions of the OS. One can be loaded into a 16k EEROM. It does not have ehbasic.
 The other is loaded into a 32k EEROM and does include a version of ehbasic.
 
+The KERNAL is run at power up or reset.  It test RAM and writes the startup meeages to the terminal.  Most of these startup routines were borrowed and modified from VIC20 code.  It also includes a few usful routines that can be used when writing code.
+
+ILOAD is an Intel HEX loader program that I 'borrowed' from D. Hansel's smon.asm files.
+(https://github.com/dhansel/smon6502)
+This allows code to be loaded into RAM and exit directly into WOZMON. Then using the WOZMON 'R' command the code can be run.
+
+ClearRAM just writes $00 to all RAM locations from $0400 to $7FFF.
+
+WOZMON is modified to show 16 values per line instead of 8.  the echo feature is removed and the kernal TXCHAR routine is used in it's place.
+
 If there are any questions I can be reached at the following email address: charvie7190@gmail.com.
