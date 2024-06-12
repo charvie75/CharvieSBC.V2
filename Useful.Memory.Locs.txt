@@ -1,0 +1,40 @@
+*****************************
+* PAGES 0,2 & 3 MEMORY LOCS *
+***************************** 
+
+0023-002A Used by WOZMON
+002B-002C Pointer: Start of RAM
+0037-0038 Pointer: Top of RAM
+00C1-00C2 Used to test RAM @ startup
+
+
+0200-0258 Input Buffer (also used by WOZMON)
+0281-0282 Start of memory for OS RAM
+0283-0284 Top of memory for OS RAM
+
+
+*****************************
+*  USEFUL KERNAL LOCATIONS  *
+*****************************
+
+$E000 = STARTWM.....Call here will return to MENU but NOT clear RAM.
+$F000 = RESET.......Entry @ PowerUp or Reset. Init RAM, print
+                    startup messages and then calls STARTWM.
+$F09E = PRTSTR......Prints a 'null' terminated ascii string.
+$F12A = IOINIT......Initialize ACIA registers. (Only @ PowerUp or Reset)
+$F135 = TXCHAR......Sends an ascii character to the terminal.
+$F142 = RXCHAR......Wait for & get character from the terminal & echo it back.
+$F149 = GETCHAR.....Wait for & get character from the terminal-NO echo.
+$F154 = CLEARSCR....Clears the terminal screen.
+$F15F = NEWLINE.....Moves the cursor to the beginning of the next line.
+$F16A = UCASE.......Converts lower case ascii characters to upper case.
+$F175 = PRTXBYT.....Converts data byte to ascii character and sends it to terminal.
+$FF00 = WOZMON......Allows memory to be examined, RAM to be written to
+                    and code in both ROM and RAM to be run.
+
+
+
+
+
+
+
