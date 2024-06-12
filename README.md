@@ -12,13 +12,19 @@ If the LM7805 is used the input power can be either +9vdc or +12vdc. If you use 
 
 Using the GAL16V8D ic allows flexible decoding. Coding of the GAL16V8D was done via WinCupl.
 
-The memory map created by this .jed file is as follows:
-	C000 - FFFF ==> ROM
-	9000 - BFFF ==> Not Used
-	8000 - 8FFF ==> Hardware
-			8008 & 8009 ==> ACIA
-			8010 - 801F ==> VIA
-	0000 - 7FFF ==> RAM
+The memory map created by the .jed file is as follows.
+
+C000 - FFFF ==> ROM.
+
+9000 - BFFF ==> Not Used.
+
+8000 - 8FFF ==> Hardware.
+
+8008 & 8009 ==> ACIA.
+
+8010 - 801F ==> VIA.
+
+0000 - 7FFF ==> RAM.
 
 I have developed a basic OS.
 There are two versions of the OS. One can be loaded into a 16k EEROM. It does not have ehbasic.
