@@ -38,6 +38,6 @@ This allows code to be loaded into RAM and exit directly into WOZMON. Then using
 
 ClearRAM just writes $00 to all RAM locations from $0400 to $7FFF.
 
-WOZMON is modified to show 16 values per line instead of 8.  the echo feature is removed and the kernal TXCHAR routine is used in it's place.
+WOZMON is modified to show 16 values per line instead of 8.  the echo feature is removed and the kernal RXCHAR routine is used in it's place.
 
 If there are any questions I can be reached at the following email address: charvie7190@gmail.com.
