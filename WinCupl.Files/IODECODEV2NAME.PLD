@@ -9,7 +9,7 @@ Location  ;
 Device   g16v8a ;
 
 PIN    1 = PHI2  ; /* Clock       */
-PIN    2 = RW	   ; /* R/!W        */
+PIN    2 = RW	 ; /* R/!W        */
 PIN    3 = A15   ; /* Address A15 */ 
 PIN    4 = A14   ; /* Address A14 */
 PIN    5 = A13   ; /* Address A13 */
@@ -18,9 +18,9 @@ PIN    7 = A11   ; /* Address A11 */
 PIN    8 = A10   ; /* Address A10 */
 PIN    9 = A9    ; /* Address A9  */
 PIN   11 = A8    ; /* Address A8  */
-PIN   12 = A7    ; /* Address A7 */
-PIN   13 = A6    ; /* Address A6 */
-PIN   14 = A5    ; /* Address A5 */
+PIN   12 = A7    ; /* Address A7  */
+PIN   13 = A6    ; /* Address A6  */
+PIN   14 = A5    ; /* Address A5  */
 
 /* *************** OUTPUT PINS *********************/
 PIN  15 = ROMCS     ; /* ROM Chip Select (Active Low) C000-FFFF */
