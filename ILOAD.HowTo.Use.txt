@@ -1,0 +1,43 @@
+ILOAD - How to use it.
+	NOTE: For a terminal, I use 'PuTTY' with the connection set to 115200 baud, 8-1-N. Cursor is set to 'underline' (_).
+
+1. Write the code that you want to develop/test.
+
+2. Assemble the code into 'Intel HEX' format. To accomplish this step I use VASM with the following command line:
+		vasm6502_oldstyle -dotdir -Fihex <file name>
+
+This will creat a 'a.out' file that is NOT a bin file.
+
+3. Open the file in a text editor. It should look similar to the following:
+
+:1D700000A2FF2054F1E82042F19D0004C90DF007C918D0F14C00FF205FF14C0570A6
+:00000001FF
+
+	Can be multiple lines depending on the size of your code.
+
+4. Copy this like you would copy lines of text that you intend to paste into another text file.
+
+5. In the terminal press 'L' for LOAD. you will see a '.' and the cursor on the next line.
+
+6. Move the mouse cursor (arrow) over the terminal cursor and press the scroll wheel down. This should paste the Intel HEX file into RAM. The terminal screen should look similar to the following:
+
+.
+:1D700000A2FF2054F1E82042F19D0004C90DF007C918D0F14C00FF205FF14C0570A6
+:00000001FF
++
+_
+
+The '+' means that the file was loaded into RAM successfully. Press enter (return) on your keyboard and the terminal screen will clear and you will be left with the 'WOZMON' prompt '/' and the terminal cursor on the next line.
+
+7. Enter the RAM memory location for the start of your code followed by '.R' and 'enter'. <XXXX.R> Your code should run.
+
+
+
+
+
+
+
+
+
+ 
+  
