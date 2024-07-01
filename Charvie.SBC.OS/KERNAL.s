@@ -8,6 +8,8 @@
 ACIA_CnSt = $8008			; Control & Status registers address
 ACIA_TxRx = $8009			; Tx & Rx registers address
 
+IRQ_VEC = $0314
+
 freebyte = $0200			; Start of input buffer (also used by WOZMON)
 
 ;*****************************************************
@@ -21,7 +23,8 @@ Reset:
 	sei						; disable interrupts
 	txs						; clear stack
 	cld						; clear decimal mode
-	jsr	RAMinit				; initialise and test RAM
+	jsr	RAMinit				; initialize and test RAM
+	jsr IRQINIT				; initialize Interrupt Vector location
 	jsr	IOINIT				; initialize I/O registers
 	cli						; enable interrupts
 
@@ -281,6 +284,19 @@ char_loop:
 	
 	pla
 	sta freebyte,y			; Pull the null off the stack and add back to the string
+	rts
+
+;***************************************************************
+;                    Initialize Interrupt Vector
+; $0314 & $0315 hold the memory address of the Interrupt Handler
+; routine. When an IRQ occurs the CPU will jump to this location
+; and handle the IRQ request. 
+;***************************************************************
+IRQINIT:
+	lda #$e3				; IRQ Vector low order byte
+	sta IRQ_VEC				; Store
+	lda #$ff				; IRQ Vector high order byte
+	sta IRQ_VEC+1			; Store
 	rts
 
 ;*************************************************************

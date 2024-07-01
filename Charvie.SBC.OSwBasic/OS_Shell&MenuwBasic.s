@@ -8,12 +8,14 @@
 	.include "ILOAD32k.s"
 	.include "KERNAL.s"
 	.include "WOZMON.s"
+	.include "InterruptHandler.s"
 
 ;CLRAM = $E9E0
 ;ILOAD = $EA00
 ;EhBasic = $EB00
 ;WOZMON  = $FF00 
-                                                   
+;IRQ = $FFE0
+                                                  
 ;*****************************************************
 ;*                  START OF CODE                    *
 ;*****************************************************
@@ -96,7 +98,7 @@ mesg4: .asciiz " (B)ASIC"
 	.org $fffc
 	
 	.word Reset
-	.word $0000
+	.word IRQ
 
 
 

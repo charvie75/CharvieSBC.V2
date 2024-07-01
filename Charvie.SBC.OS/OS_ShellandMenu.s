@@ -6,11 +6,13 @@
 	.include "WOZMON.s"
 	.include "ILOAD16k.s"
 	.include "ClearRAM16k.s"
+	.include "InterruptHandler.s"
 
 ;MENU = $E000
 ;CLRAM = $E0E0
 ;ILOAD = $E100
 ;WOZMON = $FF00
+;IRQ = $FFE0
 
 ;*****************************************************
 ;*                  START OF CODE                    *
@@ -84,5 +86,5 @@ mesg3: .asciiz " (C)LEAR RAM"
 	.org $fffc
 	
 	.word Reset
-	.word $0000
+	.word IRQ
 
